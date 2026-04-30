@@ -1,11 +1,9 @@
 import axios from 'axios';
 
 const API = axios.create({
-    baseURL: 'https://justice-portal-backend-1.onrender.com/api',
-    withCredentials: true
+    baseURL: 'https://justice-portal-backend-1.onrender.com/api'
 });
 
-// Add a request interceptor to attach the token
 API.interceptors.request.use((config) => {
     const token = localStorage.getItem('token');
     if (token) {
